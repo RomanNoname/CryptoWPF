@@ -15,7 +15,12 @@
       "ProjectGuid": "22495aa2-ea87-4237-94ec-57f85ce351b9",
       "DisplayName": "CryptoBLL",
       "ColorIndex": 2
+    },
+    "124f161a-1ac5-4028-8929-1ef9a51316a8": {
+      "ProjectGuid": "124f161a-1ac5-4028-8929-1ef9a51316a8",
+      "DisplayName": "CryptoWPF",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

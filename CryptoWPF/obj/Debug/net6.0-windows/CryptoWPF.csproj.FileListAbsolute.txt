@@ -26,3 +26,7 @@ C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\bin\Debug\net6.0-windows\CryptoC
 C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\bin\Debug\net6.0-windows\CryptoBLL.pdb
 C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\bin\Debug\net6.0-windows\CryptoContracts.pdb
 C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\CryptoWPF.csproj.CopyComplete
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Pages\SearchCoinPage.g.cs
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Pages\TopCoinsPage.g.cs
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Pages\SearchCoinPage.baml
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Pages\TopCoinsPage.baml

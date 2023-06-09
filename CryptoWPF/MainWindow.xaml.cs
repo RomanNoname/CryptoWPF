@@ -1,18 +1,4 @@
-﻿using CryptoBLL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using CryptoWPF.Pages;
 
 namespace CryptoWPF
 {
@@ -21,19 +7,20 @@ namespace CryptoWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Page> _pages;
         public MainWindow()
         {
+            _pages = new List<Page> { new TopCoinsPage(), new SearchCoinPage() };
             InitializeComponent();
-            InitializeAsync();
-
-
+            MainFrame.Content = _pages[0];
         }
-        private async void InitializeAsync()
+        private void LoadTopCoinsPage(object sender, RoutedEventArgs e)
         {
-
-            var a = new CoinCapService();
-            coinsList.ItemsSource = await a.GetTopCoins();
-
+            MainFrame.Content = _pages[0];
+        }
+        private void LoadSearchCoinPage(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = _pages[1];
         }
     }
 }

@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="auto" Width="auto">
     <Grid>
-        <ListBox x:Name="coinsList" DisplayMemberPath="Name">
-        </ListBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+           
+            <RowDefinition Height="4*"/>
+          
+        </Grid.RowDefinitions>
+
+        <Button Content="Top-10" Click="LoadTopCoinsPage" Width="100" Height="30" Background="LightBlue" Foreground="White" BorderBrush="DarkBlue" BorderThickness="2" Margin="25,24,549,24" />
+        <Button Content="Search" Click="LoadSearchCoinPage" Width="100" Height="30" Background="LightBlue" Foreground="White" BorderBrush="DarkBlue" BorderThickness="2" Margin="150,24,424,24" />
+
+        <Frame x:Name="MainFrame" Background="AliceBlue" Grid.Row="1" Margin="10,40,10,10" />
     </Grid>
 </Window>
