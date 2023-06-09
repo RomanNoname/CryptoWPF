@@ -1,0 +1,15 @@
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\bin\Debug\net6.0-windows\CryptoBLL.deps.json
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\bin\Debug\net6.0-windows\CryptoBLL.dll
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\bin\Debug\net6.0-windows\ref\CryptoBLL.dll
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\bin\Debug\net6.0-windows\CryptoBLL.pdb
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\bin\Debug\net6.0-windows\CryptoContracts.dll
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\bin\Debug\net6.0-windows\CryptoContracts.pdb
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\obj\Debug\net6.0-windows\CryptoBLL.csproj.AssemblyReference.cache
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\obj\Debug\net6.0-windows\CryptoBLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\obj\Debug\net6.0-windows\CryptoBLL.AssemblyInfoInputs.cache
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\obj\Debug\net6.0-windows\CryptoBLL.AssemblyInfo.cs
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\obj\Debug\net6.0-windows\CryptoBLL.csproj.CoreCompileInputs.cache
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\obj\Debug\net6.0-windows\CryptoBLL.csproj.CopyComplete
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\obj\Debug\net6.0-windows\CryptoBLL.dll
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\obj\Debug\net6.0-windows\ref\CryptoBLL.dll
+C:\Users\roman\source\repos\CryptoWPF\CryptoContracts\obj\Debug\net6.0-windows\CryptoBLL.pdb

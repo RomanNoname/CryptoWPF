@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cab2c179-d32d-4d0d-b120-3fe1eebc6e45": {
+      "ProjectGuid": "cab2c179-d32d-4d0d-b120-3fe1eebc6e45",
+      "DisplayName": "CryptoWPF",
+      "ColorIndex": 0
+    },
+    "9ea5007b-ac72-473f-ba65-c37acb45c660": {
+      "ProjectGuid": "9ea5007b-ac72-473f-ba65-c37acb45c660",
+      "DisplayName": "CryptoContracts",
+      "ColorIndex": 1
+    },
+    "22495aa2-ea87-4237-94ec-57f85ce351b9": {
+      "ProjectGuid": "22495aa2-ea87-4237-94ec-57f85ce351b9",
+      "DisplayName": "CryptoBLL",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
