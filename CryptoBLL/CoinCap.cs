@@ -1,8 +1,6 @@
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CryptoContracts
 {
@@ -24,5 +22,7 @@ namespace CryptoContracts
         public string PriceUsd { get; set; }
         public string ChangePercent24Hr { get; set; }
         public string Vwap24Hr { get; set; }
+
+        public string Explorer { get; set; }
     }
 }

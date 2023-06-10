@@ -1,4 +1,7 @@
 ﻿
+using CryptoContracts;
+using System.Diagnostics;
+
 namespace CryptoWPF.Pages
 {
     /// <summary>
@@ -6,10 +9,34 @@ namespace CryptoWPF.Pages
     /// </summary>
     public partial class SearchCoinPage : Page
     {
+        private CoinCapService _coinCapService;
         public SearchCoinPage()
         {
+            _coinCapService = new CoinCapService();
             InitializeComponent();
         }
-       
+
+        private async void SearchCoin(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(NameCoin.Text))
+            {
+                MessageBox.Show("Please, type name of coin");
+                return;
+            }
+            var result = await _coinCapService.GetCoinByName(NameCoin.Text);
+            DataContext = result;
+        }
+        private async void GetInfoCoin(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                CoinCap selectedCoin = (CoinCap)e.AddedItems[0];
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = selectedCoin.Explorer,
+                    UseShellExecute = true
+                });
+            }
+        }
     }
 }
