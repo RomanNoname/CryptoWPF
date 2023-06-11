@@ -31,11 +31,12 @@ namespace CryptoWPF.Pages
             if (e.AddedItems.Count > 0)
             {
                 CoinCap selectedCoin = (CoinCap)e.AddedItems[0];
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = selectedCoin.Explorer,
-                    UseShellExecute = true
-                });
+                if (!string.IsNullOrEmpty(selectedCoin.Explorer))
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = selectedCoin.Explorer,
+                        UseShellExecute = true
+                    });
             }
         }
     }

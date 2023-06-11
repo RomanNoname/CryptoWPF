@@ -19,7 +19,7 @@ namespace CryptoContracts
         public string MaxSupply { get; set; }
         public string MarketCapUsd { get; set; }
         public string VolumeUsd24Hr { get; set; }
-        public string PriceUsd { get; set; }
+        public decimal PriceUsd { get; set; }
         public string ChangePercent24Hr { get; set; }
         public string Vwap24Hr { get; set; }
 

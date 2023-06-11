@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\App.xaml
-4-1665349851
+41055098675
 
-91610031313
+9-669703960
 198775499263
-MainWindow.xaml;Pages\Convertor.xaml;Pages\SearchCoinPage.xaml;Pages\TopCoinsPage.xaml;
+MainWindow.xaml;Pages\ConverterPage.xaml;Pages\SearchCoinPage.xaml;Pages\TopCoinsPage.xaml;
 
-False
+True
 
