@@ -1,14 +1,5 @@
-
-using System.Collections.Generic;
-
-
 namespace CryptoContracts
 {
-    public class CoinCapResponse
-    {
-        public List<CoinCap> Data { get; set; }
-    }
-
     public class CoinCap
     {
         public string Id { get; set; }
@@ -22,7 +13,6 @@ namespace CryptoContracts
         public decimal PriceUsd { get; set; }
         public string ChangePercent24Hr { get; set; }
         public string Vwap24Hr { get; set; }
-
         public string Explorer { get; set; }
     }
 }

@@ -32,3 +32,9 @@ C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Pages\S
 C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Pages\TopCoinsPage.baml
 C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Pages\ConverterPage.baml
 C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Pages\ConverterPage.g.cs
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\App.baml
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Resources\Resources.ua.baml
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\bin\Debug\net6.0-windows\Image\en.png
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\bin\Debug\net6.0-windows\Image\ua.png
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\CryptoWPF_Content.g.cs
+C:\Users\roman\source\repos\CryptoWPF\CryptoWPF\obj\Debug\net6.0-windows\Resources\Resources.en-US.baml

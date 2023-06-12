@@ -26,17 +26,25 @@ namespace CryptoWPF.Pages
             var result = await _coinCapService.GetCoinByName(NameCoin.Text);
             DataContext = result;
         }
-        private async void GetInfoCoin(object sender, SelectionChangedEventArgs e)
+        private void GetInfoCoin(object sender, SelectionChangedEventArgs e)
         {
             if (e.AddedItems.Count > 0)
             {
                 CoinCap selectedCoin = (CoinCap)e.AddedItems[0];
+
                 if (!string.IsNullOrEmpty(selectedCoin.Explorer))
-                    Process.Start(new ProcessStartInfo
+                {
+                    MessageBoxResult result = MessageBox.Show("Will open "+selectedCoin.Explorer, "", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                    if (result == MessageBoxResult.Yes)
                     {
-                        FileName = selectedCoin.Explorer,
-                        UseShellExecute = true
-                    });
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = selectedCoin.Explorer,
+                            UseShellExecute = true
+                        });
+                    }
+                }
             }
         }
     }

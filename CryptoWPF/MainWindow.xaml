@@ -11,13 +11,24 @@
     <StackPanel Orientation="Horizontal" Background="#87CEFA">
         <Border BorderBrush="#0000CD" BorderThickness="2">
             <StackPanel Orientation="Vertical" >
-                <Button Cursor="Hand" Content="Top-10" Click="LoadTopCoinsPage" Width="100" Height="30" Background="#6495ED" Foreground="White" BorderBrush="#E0FFFF" BorderThickness="2"  Margin="1" Padding="5"/>
-                <Button Cursor="Hand" Content="Search" Click="LoadSearchCoinPage" Width="100" Height="30" Background="#6495ED" Foreground="White" BorderBrush="#E0FFFF" BorderThickness="2" Margin="1" Padding="5" />
-                <Button Cursor="Hand" Content="Converter" Click="LoadConverter" Width="100" Height="30" Background="#6495ED" Foreground="White" BorderBrush="#E0FFFF" BorderThickness="2"   Margin="1" Padding="5"/>
+                <Button Cursor="Hand" Content="{DynamicResource Top-10}" Click="LoadTopCoinsPage" Width="100" Height="30" Background="#6495ED" Foreground="White" BorderBrush="#E0FFFF" BorderThickness="2"  Margin="1" Padding="5"/>
+                <Button Cursor="Hand" Content="{DynamicResource Search}" Click="LoadSearchCoinPage" Width="100" Height="30" Background="#6495ED" Foreground="White" BorderBrush="#E0FFFF" BorderThickness="2" Margin="1" Padding="5" />
+                <Button Cursor="Hand" Content="{DynamicResource Converter}" Click="LoadConverter" Width="100" Height="30" Background="#6495ED" Foreground="White" BorderBrush="#E0FFFF" BorderThickness="2"   Margin="1" Padding="5"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="40" Height="40" Click="SwitchUALang" Background="Transparent" BorderThickness="0">
+                        <Image Source="Image/ua.png"/>
+                    </Button>
+
+                    <Button Width="40" Height="40" Click="SwitchENLang" Background="Transparent" BorderThickness="0">
+                        <Image Source="Image/en.png"/>
+                    </Button>
+                </StackPanel>
             </StackPanel>
+           
         </Border>
-        <Frame x:Name="MainFrame" Background="AliceBlue" MaxWidth="Infinity" Width="1000" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <Frame x:Name="MainFrame" Background="AliceBlue"  HorizontalContentAlignment="Center" />
+        </ScrollViewer>
     </StackPanel>
-    
-   
+
 </Window>

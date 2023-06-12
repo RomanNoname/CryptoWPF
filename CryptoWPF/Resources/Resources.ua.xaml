@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="Top-10">Топ-10</sys:String>
+    <sys:String x:Key="Search">Пошук</sys:String>
+    <sys:String x:Key="Converter">Калькулятор</sys:String>
+    <sys:String x:Key="NameCode">Назва чи Код</sys:String>
+
+</ResourceDictionary>

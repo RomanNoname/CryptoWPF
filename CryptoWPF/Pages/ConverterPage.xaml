@@ -8,7 +8,7 @@
       d:DesignHeight="800" d:DesignWidth="900"
       Title="ConverterPage">
 
-    <StackPanel Orientation="Vertical">
+    <StackPanel Orientation="Vertical" Width="900" Background="#89CFF0">
         <StackPanel Orientation="Horizontal" Margin="25,25,0,0">
             <Button Content="Select Out" Click="SearchCoinOut" Width="100" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand" HorizontalAlignment="Left"/>
             <TextBox x:Name="ConvertOut" Width="100"  HorizontalAlignment="Left"/>
@@ -18,34 +18,58 @@
          </StackPanel>
         <StackPanel Orientation="Vertical" Margin="25,25,25,25">
             <StackPanel Orientation="Horizontal" Margin="0,10,0,20">
-                <Label x:Name="NameCoinOut" Content="" HorizontalAlignment="Left"  Background="#5F9EA0"  Foreground="#E0FFFF"></Label>
-                <Label x:Name="IN"  Content="IN" HorizontalAlignment="Center" Background="#5F9EA0" Foreground="#E0FFFF"></Label>
-                <Label x:Name="NameCoinIn" Content="" HorizontalAlignment="Right" Background="#5F9EA0"  Foreground="#E0FFFF" ></Label>
+                <Label x:Name="NameCoinOut" Visibility="Hidden" Content="" HorizontalAlignment="Left"  Background="#5F9EA0"  Foreground="#E0FFFF"></Label>
+                <Label x:Name="IN" Visibility="Hidden"  Content="IN" HorizontalAlignment="Center" Background="#5F9EA0" Foreground="#E0FFFF"></Label>
+                <Label x:Name="NameCoinIn" Visibility="Hidden" Content="" HorizontalAlignment="Right" Background="#5F9EA0"  Foreground="#E0FFFF" ></Label>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,20">
                 <Label Content="Count" Background="#4682B4" Foreground="AliceBlue" FontSize="14"></Label>
-                <TextBox x:Name="CountCoin" Width="100"></TextBox>
+                <TextBox x:Name="CountCoin" Width="100"  PreviewTextInput="NumberOnly"></TextBox>
                 <Button Content="Convert" Click="Convert" Width="100" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand"/>
                 <Label x:Name="Converted" Margin="50,5,5,0" Foreground="Gray"></Label>
             </StackPanel>
         </StackPanel>
         <Grid>
             <ListView x:Name="CoinsOut"  SelectionChanged="GetCoinOut" ItemsSource="{Binding}"  HorizontalAlignment="Left">
+                <ListView.Resources>
+                    <Style TargetType="ListView">
+                        <Setter Property="Background" Value="White" />
+                        <Setter Property="BorderBrush" Value="#DDDDDD" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Margin" Value="10" />
+                        <Setter Property="Padding" Value="5" />
+                    </Style>
+                    <Style TargetType="GridViewColumnHeader">
+                        <Setter Property="Background" Value="#E0E0E0" />
+                        <Setter Property="Foreground" Value="Black" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                </ListView.Resources>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" />
-                        <GridViewColumn Header="Symbol" DisplayMemberBinding="{Binding Symbol}" />
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn Header="Price (USD)" DisplayMemberBinding="{Binding PriceUsd}" />
                     </GridView>
                 </ListView.View>
             </ListView>
             <ListView  x:Name="CoinsIn" SelectionChanged="GetCoinIn" ItemsSource="{Binding}" HorizontalAlignment="Right">
+                <ListView.Resources>
+                    <Style TargetType="ListView">
+                        <Setter Property="Background" Value="White" />
+                        <Setter Property="BorderBrush" Value="#DDDDDD" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Margin" Value="10" />
+                        <Setter Property="Padding" Value="5" />
+                    </Style>
+                    <Style TargetType="GridViewColumnHeader">
+                        <Setter Property="Background" Value="#E0E0E0" />
+                        <Setter Property="Foreground" Value="Black" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                </ListView.Resources>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" />
-                        <GridViewColumn Header="Symbol" DisplayMemberBinding="{Binding Symbol}" />
-                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                       <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn Header="Price (USD)" DisplayMemberBinding="{Binding PriceUsd}" />
                     </GridView>
                 </ListView.View>

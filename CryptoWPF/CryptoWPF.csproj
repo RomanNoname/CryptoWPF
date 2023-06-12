@@ -8,6 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Image\en.png" />
+    <None Remove="Image\ua.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Image\en.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image\ua.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CryptoContracts\CryptoBLL.csproj" />
   </ItemGroup>
 

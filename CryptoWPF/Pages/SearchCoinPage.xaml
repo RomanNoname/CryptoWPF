@@ -8,12 +8,27 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SearchCoinPage">
     <StackPanel Orientation="Vertical" Background="#87CEFA">
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Name or Code" VerticalAlignment="Center" Background="#4169E1" Foreground="#E0FFFF"/>
-                <TextBox x:Name="NameCoin" Width="200"/>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Name or Code" VerticalAlignment="Center" Background="#4169E1" Foreground="#E0FFFF"/>
+            <TextBox x:Name="NameCoin" Width="200"/>
             <Button Grid.Row="3" Content="Search" Click="SearchCoin" Width="100" HorizontalAlignment="Center" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand"/>
-            </StackPanel>
-            <ListView Grid.Row="4" SelectionChanged="GetInfoCoin" ItemsSource="{Binding}">
+        </StackPanel>
+        <ScrollViewer>
+            <ListView SelectionChanged="GetInfoCoin" ItemsSource="{Binding}">
+                <ListView.Resources>
+                    <Style TargetType="ListView">
+                        <Setter Property="Background" Value="White" />
+                        <Setter Property="BorderBrush" Value="#DDDDDD" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Margin" Value="10" />
+                        <Setter Property="Padding" Value="5" />
+                    </Style>
+                    <Style TargetType="GridViewColumnHeader">
+                        <Setter Property="Background" Value="#E0E0E0" />
+                        <Setter Property="Foreground" Value="Black" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                </ListView.Resources>
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" />
@@ -31,5 +46,6 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-        </StackPanel>
+        </ScrollViewer>
+    </StackPanel>
 </Page>

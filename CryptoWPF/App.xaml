@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:CryptoWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Resources.en-US.xaml" />
+              <ResourceDictionary Source="Resources/Resources.ua.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
