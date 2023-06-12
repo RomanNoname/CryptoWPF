@@ -1,12 +1,9 @@
 ﻿
 namespace CryptoWPF.Pages
 {
-    /// <summary>
-    /// Interaction logic for TopCoinsPage.xaml
-    /// </summary>
     public partial class TopCoinsPage : Page
     {
-        private CoinCapService _coinCapService;
+        private ICoinSerivce _coinCapService;
         public TopCoinsPage()
         {
             _coinCapService = new CoinCapService();
@@ -16,7 +13,14 @@ namespace CryptoWPF.Pages
 
         private async void InitializeAsync()
         {
-          DataContext = (await _coinCapService.GetTopCoins()).Take(10);
+            try
+            {
+                DataContext = (await _coinCapService.GetTopCoins()).Take(10);
+            }
+            catch
+            {
+                MessageBox.Show("Problem with the network");
+            }
         }
     }
 }

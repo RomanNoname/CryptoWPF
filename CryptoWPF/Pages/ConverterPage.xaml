@@ -10,11 +10,11 @@
 
     <StackPanel Orientation="Vertical" Width="900" Background="#89CFF0">
         <StackPanel Orientation="Horizontal" Margin="25,25,0,0">
-            <Button Content="Select Out" Click="SearchCoinOut" Width="100" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand" HorizontalAlignment="Left"/>
+            <Button Content="{DynamicResource SelectOut}" Click="SearchCoinOut" Width="100" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand" HorizontalAlignment="Left"/>
             <TextBox x:Name="ConvertOut" Width="100"  HorizontalAlignment="Left"/>
             
             <TextBox x:Name="ConvertIn" Width="100" Margin="100,0,0,0" HorizontalAlignment="Right"/>
-            <Button Content="Select In" Click="SearchCoinIn" Width="100" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand" HorizontalAlignment="Right"/>
+            <Button Content="{DynamicResource SelectIn}" Click="SearchCoinIn" Width="100" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand" HorizontalAlignment="Right"/>
          </StackPanel>
         <StackPanel Orientation="Vertical" Margin="25,25,25,25">
             <StackPanel Orientation="Horizontal" Margin="0,10,0,20">
@@ -23,9 +23,9 @@
                 <Label x:Name="NameCoinIn" Visibility="Hidden" Content="" HorizontalAlignment="Right" Background="#5F9EA0"  Foreground="#E0FFFF" ></Label>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,20">
-                <Label Content="Count" Background="#4682B4" Foreground="AliceBlue" FontSize="14"></Label>
+                <Label Content="{DynamicResource Count}" Background="#4682B4" Foreground="AliceBlue" FontSize="14"></Label>
                 <TextBox x:Name="CountCoin" Width="100"  PreviewTextInput="NumberOnly"></TextBox>
-                <Button Content="Convert" Click="Convert" Width="100" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand"/>
+                <Button Content="{DynamicResource Convert}" Click="Convert" Width="100" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand"/>
                 <Label x:Name="Converted" Margin="50,5,5,0" Foreground="Gray"></Label>
             </StackPanel>
         </StackPanel>

@@ -5,5 +5,13 @@
     <sys:String x:Key="Search">Пошук</sys:String>
     <sys:String x:Key="Converter">Калькулятор</sys:String>
     <sys:String x:Key="NameCode">Назва чи Код</sys:String>
+    <sys:String x:Key="SelectOut">Маємо</sys:String>
+    <sys:String x:Key="SelectIn">Конвертуємо в</sys:String>
+    <sys:String x:Key="Count">Кількість</sys:String>
+    <sys:String x:Key="Convert">Конвертувати</sys:String>
+    <sys:String x:Key="InvalidNameCoin">Будь ласка, заповніть поле</sys:String>
+    <sys:String x:Key="InvalidCount">Ведіть кількість</sys:String>
+    <sys:String x:Key="NothingToConvert">Нічого конвертувати</sys:String>
+    <sys:String x:Key="Link">Буде відкрите посилання</sys:String>
 
 </ResourceDictionary>

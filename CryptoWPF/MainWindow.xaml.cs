@@ -1,7 +1,6 @@
 ﻿using CryptoWPF.Pages;
-using System.Globalization;
-using System.Threading;
-using System.Windows.Markup;
+using System.IO;
+using System.Text.Json;
 
 namespace CryptoWPF
 {
@@ -17,8 +16,10 @@ namespace CryptoWPF
         {
             _pages = new List<Page> { new TopCoinsPage(), new SearchCoinPage(), new ConverterPage() };
             _languageDictionaries = new Dictionary<string, ResourceDictionary>();
+
             InitializeComponent();
             CustomInitialize();
+
         }
         private void LoadTopCoinsPage(object sender, RoutedEventArgs e)
         {
@@ -37,51 +38,56 @@ namespace CryptoWPF
             Title = "Crypto - Converter";
         }
 
-        private void SwitchUALang(object sender, RoutedEventArgs e)
+        private async void SwitchUALang(object sender, RoutedEventArgs e)
         {
-            SwitchLanguage("uk-UA");
-            _pages[1].Language = XmlLanguage.GetLanguage("uk-UA");
+            SwitchLanguage("ua");
+            foreach (var page in _pages)
+                page.SwitchLanguage("ua");
+            await SetSettings("ua");
         }
-        private void SwitchENLang(object sender, RoutedEventArgs e)
+        private async void SwitchENLang(object sender, RoutedEventArgs e)
         {
             SwitchLanguage("en-US");
-            _pages[1].Language = XmlLanguage.GetLanguage("en-US");
+            foreach (var page in _pages)
+                page.SwitchLanguage("en-US");
+            await SetSettings("en-US");
         }
-        private void SwitchLanguage(string culture)
+        private void SwitchLanguage(string language)
         {
-            if (_languageDictionaries.TryGetValue(culture, out ResourceDictionary dictionary))
-            {
-               
-                var dictionariesToRemove = new List<ResourceDictionary>();
-                foreach (var mergedDictionary in Resources.MergedDictionaries)
-                {
-                    if (mergedDictionary.Source != null && mergedDictionary.Source.OriginalString.StartsWith("Resources/Resources."))
-                    {
-                        dictionariesToRemove.Add(mergedDictionary);
-                    }
-                }
-                foreach (var mergedDictionary in dictionariesToRemove)
-                {
-                    Resources.MergedDictionaries.Remove(mergedDictionary);
-                }
-
-                Resources.MergedDictionaries.Add(dictionary);
-
-                Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
-            }
+            var mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+            mergedDictionaries.Clear();
+            var Dictionary = new ResourceDictionary();
+            Dictionary.Source = new Uri("Resources/Resources." + language + ".xaml", UriKind.RelativeOrAbsolute);
+            mergedDictionaries.Add(Dictionary);
         }
-        private void CustomInitialize()
+        private async void CustomInitialize()
         {
             MainFrame.Content = _pages[0];
-
-            var enDictionary = new ResourceDictionary();
-            enDictionary.Source = new Uri("Resources/Resources.en-US.xaml", UriKind.RelativeOrAbsolute);
-            _languageDictionaries.Add("en-US", enDictionary);
-            var uaDictionary = new ResourceDictionary();
-            uaDictionary.Source = new Uri("Resources/Resources.ua.xaml", UriKind.RelativeOrAbsolute);
-            _languageDictionaries.Add("uk-UA", uaDictionary);
-            Resources.MergedDictionaries.Add(enDictionary);
+            SwitchLanguage((await GetSettings()).Language);
         }
+        private async Task<Settings> GetSettings(string language = "ua")
+        {
+            var settings = new Settings(language);
+            if (File.Exists("settings.json"))
+            {
+                using var fs = new FileStream("settings.json", FileMode.Open);
+                settings = await JsonSerializer.DeserializeAsync<Settings>(fs);
+            }
+            else
+            {
+                using var fs = new FileStream("settings.json", FileMode.Create);
+                await JsonSerializer.SerializeAsync(fs, settings);
+            }
+            return settings;
+        }
+        private async Task SetSettings(string language)
+        {
+            var settings = new Settings(language);
+            using var fs = new FileStream("settings.json", FileMode.Create);
+            await JsonSerializer.SerializeAsync(fs,settings);
+
+        }
+        public record class Settings(string Language);
+
     }
 }

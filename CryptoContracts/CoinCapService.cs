@@ -7,44 +7,35 @@ using System.Threading.Tasks;
 
 namespace CryptoBLL
 {
-    public class CoinCapService : ICoinsService
+    public class CoinCapService : ICoinSerivce
     {
-        private Uri _url = new Uri("https://api.coincap.io");
-        public async Task<List<CoinCap>> GetTopCoins()
+        private readonly Uri _url = new Uri("https://api.coincap.io");
+        private readonly HttpClient _httpClient;
+
+        public CoinCapService()
         {
-            using var httpClient = new HttpClient();
-            httpClient.BaseAddress = _url;
-            httpClient.Timeout = TimeSpan.FromSeconds(10);
-            var response = await httpClient.GetAsync("/v2/assets");
+            _httpClient = new HttpClient();
+            _httpClient.BaseAddress = _url;
+            _httpClient.Timeout = TimeSpan.FromSeconds(10);
+        }
+
+        public async Task<List<Coin>> GetTopCoins()
+        {
+            var response = await _httpClient.GetAsync("/v2/assets");
+            
             var responseContent = await response.Content.ReadAsStringAsync();
             var dataWrapper = JsonConvert.DeserializeObject<DataWrapper>(responseContent);
-            List<CoinCap> result = dataWrapper.Data;
+            List<Coin> result = dataWrapper.Data;
 
             return result;
         }
-        public async Task<List<CoinCap>> GetCoinByName(string name)
+
+        public async Task<List<Coin>> GetCoinByName(string name)
         {
-            using var httpClient = new HttpClient();
-            httpClient.BaseAddress = _url;
-            httpClient.Timeout = TimeSpan.FromSeconds(10);
-            var response = await httpClient.GetAsync("/v2/assets?search=" + name);
+            var response = await _httpClient.GetAsync($"/v2/assets?search={name}");
             var responseContent = await response.Content.ReadAsStringAsync();
-
             var dataWrapper = JsonConvert.DeserializeObject<DataWrapper>(responseContent);
-            List<CoinCap> result = dataWrapper.Data;
-
-            return result;
-        }
-        public async Task<List<CoinCap>> GetCoinInfo(string name)
-        {
-            using var httpClient = new HttpClient();
-            httpClient.BaseAddress = _url;
-            httpClient.Timeout = TimeSpan.FromSeconds(10);
-            var response = await httpClient.GetAsync("/v2/assets?search=" + name);
-            var responseContent = await response.Content.ReadAsStringAsync();
-
-            var dataWrapper = JsonConvert.DeserializeObject<DataWrapper>(responseContent);
-            List<CoinCap> result = dataWrapper.Data;
+            List<Coin> result = dataWrapper.Data;
 
             return result;
         }
@@ -52,7 +43,7 @@ namespace CryptoBLL
 
         public class DataWrapper
         {
-            public List<CoinCap> Data { get; set; }
+            public List<Coin> Data { get; set; }
         }
 
     }

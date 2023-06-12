@@ -9,9 +9,9 @@
       Title="SearchCoinPage">
     <StackPanel Orientation="Vertical" Background="#87CEFA">
         <StackPanel Orientation="Horizontal">
-            <Label Content="Name or Code" VerticalAlignment="Center" Background="#4169E1" Foreground="#E0FFFF"/>
+            <Label Content="{DynamicResource NameCode}" VerticalAlignment="Center" Background="#4169E1" Foreground="#E0FFFF"/>
             <TextBox x:Name="NameCoin" Width="200"/>
-            <Button Grid.Row="3" Content="Search" Click="SearchCoin" Width="100" HorizontalAlignment="Center" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand"/>
+            <Button Grid.Row="3" Content="{DynamicResource Search}" Click="SearchCoin" Width="100" HorizontalAlignment="Center" Foreground="#E0FFFF"  Background="#6495ED" Cursor="Hand"/>
         </StackPanel>
         <ScrollViewer>
             <ListView SelectionChanged="GetInfoCoin" ItemsSource="{Binding}">

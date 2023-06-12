@@ -1,6 +1,6 @@
 namespace CryptoContracts
 {
-    public class CoinCap
+    public class Coin
     {
         public string Id { get; set; }
         public string Rank { get; set; }
