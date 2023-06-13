@@ -8,7 +8,7 @@
 * View detailed information for each cryptocurrency, including price, market cap, volume, and more.
 * Page in which you can convert one currency to another
 
-Installation
+# Installation
 1. Clone the repository:
 *git clone https://github.com/RomanNoname/CryptoWPF.git*
 2. Open the project in Visual Studio (or any other compatible IDE).
