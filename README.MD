@@ -35,7 +35,7 @@ Upon launching the **CryptoWPF** application, you will be presented with a user-
 
 # Acknowledgments
 CryptoWPF makes use of the following open-source libraries and APIs:
-**https://api.coincap.io - API** for retrieving cryptocurrency data.
+**https://docs.coincap.io/ - API** for retrieving cryptocurrency data.
 
 # Disclaimer
 CryptoWPF is a sample application created for educational purposes and should not be considered as financial advice. The cryptocurrency market is highly volatile, and it is important to conduct thorough research and exercise caution when making investment decisions.
